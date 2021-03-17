@@ -27,7 +27,7 @@ const PlayScreen = ({navigation}) => {
             marginStart: 10,
           }}>
           <View style={{alignItems: 'center'}}>
-            <Icon name="angle-down" size={30} color="#ffffff" onPress={() => navigation.navigate('Search')}/>
+            <Icon name="angle-down" size={30} color="#ffffff" onPress={() => navigation.goBack()}/>
           </View>
           <View style={{alignItems: 'center'}}>
             <Text style={{color: '#ffffff', fontSize: 10}}>
