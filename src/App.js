@@ -11,6 +11,8 @@ import HomeScreen from './screens/home';
 import PlayScreen from './screens/play';
 import SearchScreen from './screens/search';
 import LibraryScreen from './screens/library';
+import ModalSearch from './screens/search/modal';
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -54,4 +56,16 @@ export default function App() {
   );
 }
 
-//* <Ionicons name={'home'} size={size} color={color} /> /*/}
+
+function RootStackScreen() {
+  return (
+    <RootStack.Navigator mode="modal">
+      <RootStack.Screen
+        name="Main"
+        component={MainStackScreen}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen name="MyModal" component={ModalScreen} />
+    </RootStack.Navigator>
+  );
+}

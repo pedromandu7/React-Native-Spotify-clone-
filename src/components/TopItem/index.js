@@ -9,7 +9,7 @@ const TopItem = ({label, imageUrl, containerStyle}) => {
         {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: 'gray',
+        backgroundColor: '#2E2E2E',
         borderRadius: 4,
         alignItems: 'center',
         marginTop: 0,

@@ -6,7 +6,7 @@ import moment from 'moment';
 // import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import TopItem from '../../components/TopItem';
-import CardList from '../../components/CardList';
+import ListCard from '../../components/ListCard';
 const images = [
   {
     id: 0,
@@ -93,7 +93,6 @@ const HomeScreen = () => {
               padding: 15,
               alignItems: 'center',
             }}>
-            
             <Text style={{fontSize: 25, fontWeight: 'bold', color: 'white'}}>
               {greet(hour)}
             </Text>
@@ -135,16 +134,29 @@ const HomeScreen = () => {
             </View>
           </View>
           <View style={{maxHeight: 250, marginLeft: 15}}>
-            <Text style={{fontSize: 25, fontWeight: 'bold', marginTop: 20, marginBottom: 20, color: 'white'}}>
+            <Text
+              style={{
+                fontSize: 25,
+                fontWeight: 'bold',
+                marginTop: 20,
+                marginBottom: 20,
+                color: 'white',
+              }}>
               Recently played
             </Text>
-            <CardList dataList={data} />
+            <ListCard dataList={data} />
           </View>
           <View style={{maxHeight: 250, marginLeft: 15}}>
-            <Text style={{fontSize: 25, fontWeight: 'bold', color: 'white'}}>
+            <Text
+              style={{
+                fontSize: 25,
+                fontWeight: 'bold',
+                marginBottom: 20,
+                color: 'white',
+              }}>
               Spotify original & exclusive shows
             </Text>
-            <CardList dataList={data} />
+            <ListCard dataList={data} />
           </View>
         </View>
       </ScrollView>
