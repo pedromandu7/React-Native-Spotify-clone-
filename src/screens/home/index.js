@@ -7,6 +7,8 @@ import moment from 'moment';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import TopItem from '../../components/TopItem';
 import ListCard from '../../components/ListCard';
+import SettingsScreen from '../settings';
+
 const images = [
   {
     id: 0,
@@ -77,7 +79,8 @@ const data = [
     color: 'gray',
   },
 ];
-const HomeScreen = () => {
+
+const HomeScreen = ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <ScrollView>
@@ -100,7 +103,7 @@ const HomeScreen = () => {
               name="cog"
               size={25}
               color="#ffffff"
-              onPress={() => navigation.navigate()}
+              onPress={() => navigation.navigate('Play')}
             />
           </View>
 
@@ -110,7 +113,6 @@ const HomeScreen = () => {
               flexWrap: 'wrap',
               flexDirection: 'row',
               height: 200,
-              // backgroundColor: 'red',
             }}>
             <View
               style={{
@@ -169,7 +171,7 @@ const hour = date.getHours();
 
 function greet(hours) {
   if (hours > 5 === hours < 12) {
-    return 'Good day';
+    return 'Good morning';
   } else if (hours >= 12 === hours <= 18) {
     return 'Good afternoon';
   } else if (hours > 18 === hours <= 24) {

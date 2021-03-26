@@ -2,25 +2,26 @@ import 'react-native-gesture-handler';
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-// import Icon from 'react-native-vector-icons/Feather';
-// import LinearGradient from 'react-native-linear-gradient';
 
-import HomeScreen from './screens/home';
-import PlayScreen from './screens/play';
-import SearchScreen from './screens/search';
 import LibraryScreen from './screens/library';
 import ModalSearch from './screens/search/modal';
+import {HomeStackScreen, PlayStackScreen, SearchStackScreen} from '.';
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
       <Tab.Navigator
         screenOptions={({route}) => ({
           tabBarIcon: ({color, size}) => {
+            console.log(size + ' primeirooooooo')
+            if (size == undefined || size == null) {
+              size = 25
+            }
+            console.log(size + ' Segundoooooooooo')
             let iconName;
             switch (route.name) {
               case 'Home':
@@ -33,7 +34,6 @@ export default function App() {
                 iconName = 'book';
                 break;
             }
-
             return <Icon name={iconName} size={size} color={'#848484'} />;
           },
         })}
@@ -41,31 +41,16 @@ export default function App() {
           activeTintColor: 'white',
           inactiveTintColor: '#848484',
           style: {
-            //Adição do style
             backgroundColor: '#2E2E2E',
             paddingLeft: 22,
             paddingRight: 22,
           },
         }}>
-        <Tab.Screen style={{}} name="Home" component={HomeScreen} />
-        {/* <Tab.Screen name="Play" component={PlayScreen} /> */}
-        <Tab.Screen name="Search" component={SearchScreen} />
+        {/* <Tab.Screen name="Play" component={PlayStackScreen} /> */}
+        <Tab.Screen name="Home" component={HomeStackScreen} />
+        <Tab.Screen name="Search" component={SearchStackScreen} />
         <Tab.Screen name="Your Library" component={LibraryScreen} />
       </Tab.Navigator>
     </NavigationContainer>
-  );
-}
-
-
-function RootStackScreen() {
-  return (
-    <RootStack.Navigator mode="modal">
-      <RootStack.Screen
-        name="Main"
-        component={MainStackScreen}
-        options={{ headerShown: false }}
-      />
-      <RootStack.Screen name="MyModal" component={ModalScreen} />
-    </RootStack.Navigator>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView, ScrollView, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const DetailsScreen = ({navigation}) => {
+const SettingsScreen = ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#696969'}}>
       <ScrollView>
@@ -21,4 +21,4 @@ const DetailsScreen = ({navigation}) => {
   );
 };
 
-export default DetailsScreen;
+export default SettingsScreen;

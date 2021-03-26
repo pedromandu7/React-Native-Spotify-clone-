@@ -1,7 +1,7 @@
 import {Text, View} from 'react-native';
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-
+  
 const Tab1Screen = ({navigation}) => {
   return (
       <View style={{ backgroundColor: '#yellow' }}>
