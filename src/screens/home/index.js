@@ -103,7 +103,7 @@ const HomeScreen = ({navigation}) => {
               name="cog"
               size={25}
               color="#ffffff"
-              onPress={() => navigation.navigate('Play')}
+              onPress={() => navigation.navigate('PlayScreen')}
             />
           </View>
 
@@ -182,28 +182,3 @@ function greet(hours) {
 }
 
 export default HomeScreen;
-
-// <NavigationContainer independent={true}>
-//       <Stack.Navigator initialRouteName="Home">
-//         <Stack.Screen
-//           name="Home"
-//           component={HomeScreen}
-//           options={{  headerShown: false}}
-//         />
-//         <Stack.Screen
-//           name="Play"
-//           component={PlayScreen}
-//           options={{  headerShown: false}}
-//         />
-//         <Stack.Screen
-//           name="Search"
-//           component={SearchScreen}
-//           options={{  headerShown: false}}
-//         />
-//         <Stack.Screen
-//           name="Library"
-//           component={LibraryScreen}
-//           options={{  headerShown: false}}
-//         />
-//       </Stack.Navigator>
-//     </NavigationContainer>

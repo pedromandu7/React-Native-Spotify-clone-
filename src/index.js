@@ -50,5 +50,31 @@ function PlayStackScreen() {
     </PlayStack.Navigator>
   );
 }
- 
-export {PlayStackScreen, SearchStackScreen, HomeStackScreen,};
+
+const StackNavigator = () => {
+  <NavigationContainer independent={true}>
+    <Stack.Navigator initialRouteName="Home">
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Play"
+        component={PlayScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Search"
+        component={SearchScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Library"
+        component={LibraryScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  </NavigationContainer>;
+};
+export {PlayStackScreen, SearchStackScreen, HomeStackScreen, StackNavigator};

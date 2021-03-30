@@ -1,18 +1,28 @@
 import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import HomeScreen from './screens/home';
-import PlayScreen from './screens/play';
-import SearchScreen from './screens/search';
-import LibraryScreen from './screens/library';
+import HomeScreen from '../screens/home';
+import LibraryScreen from '../screens/library';
+import SearchScreen from '../screens/search';
+import SearchInput from '../screens/search/searchInput';
 
 const Tab = createBottomTabNavigator();
 const {Navigator} = Tab;
 
 const TabNavigation = () => {
   return (
-<Navigator
+    <Navigator
+      tabBarOptions={{
+        activeTintColor: 'white',
+        inactiveTintColor: '#848484',
+        style: {
+          backgroundColor: '#2E2E2E',
+          paddingLeft: 22,
+          paddingRight: 22,
+        },
+      }}
       initialRouteName="Home"
+      color="#2E2E2E"
       screenOptions={({route}) => ({
         tabBarIcon: ({color, size}) => {
           let iconName;
@@ -32,7 +42,7 @@ const TabNavigation = () => {
       })}>
       {/* <Tab.Screen name="Play" component={PlayStackScreen} /> */}
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Search" component={SearchScreen} />
+      <Tab.Screen name="Search" component={SearchInput, SearchScreen} onPrees />
       <Tab.Screen name="Your Library" component={LibraryScreen} />
     </Navigator>
   );
